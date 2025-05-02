@@ -1,39 +1,21 @@
 
 package Datos;
-import java.io.Serializable; // Útil si planeas guardar/cargar objetos
+
 public class Pokemon {
-    
-    private int id; // Podría ser el número de Pokedex
-    private String nombre;
-    private String tipo1;
-    private String tipo2; // Opcional
-    private String habilidad;
-    // Puedes agregar más campos como descripción, ruta de imagen, etc.
+  String nombre;
+  String tipo;
+  int numPokedex;
+  double peso;
+  String habilidad;
 
-    // Constructor vacío (útil para algunas librerías)
-    public Pokemon() {
-    }
-
-    // Constructor con parámetros
-    public Pokemon(int id, String nombre, String tipo1, String tipo2, String habilidad) {
-        this.id = id;
+    public Pokemon(String nombre, String tipo, int numPokedex, double peso, String habilidad) {
         this.nombre = nombre;
-        this.tipo1 = tipo1;
-        this.tipo2 = tipo2;
+        this.tipo = tipo;
+        this.numPokedex = numPokedex;
+        this.peso = peso;
         this.habilidad = habilidad;
     }
-
-    // Getters y Setters para todos los atributos
-    // Puedes generarlos automáticamente en NetBeans:
-    // Clic derecho en el editor -> Insert Code... -> Getter and Setter... -> Select All -> Generate
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    
 
     public String getNombre() {
         return nombre;
@@ -43,20 +25,28 @@ public class Pokemon {
         this.nombre = nombre;
     }
 
-    public String getTipo1() {
-        return tipo1;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipo1(String tipo1) {
-        this.tipo1 = tipo1;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public String getTipo2() {
-        return tipo2;
+    public int getNumPokedex() {
+        return numPokedex;
     }
 
-    public void setTipo2(String tipo2) {
-        this.tipo2 = tipo2;
+    public void setNumPokedex(int numPokedex) {
+        this.numPokedex = numPokedex;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     public String getHabilidad() {
@@ -66,11 +56,8 @@ public class Pokemon {
     public void setHabilidad(String habilidad) {
         this.habilidad = habilidad;
     }
-
-    // (Opcional) toString para facilitar la depuración
-    @Override
-    public String toString() {
-        return "Pokemon{" + "id=" + id + ", nombre=" + nombre + ", tipo1=" + tipo1 + '}';
-    }
+  
+  
+  
+    
 }
-
