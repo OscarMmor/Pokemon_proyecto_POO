@@ -15,8 +15,10 @@ public class Pokemon {
         this.peso = peso;
         this.habilidad = habilidad;
     }
-    
 
+    public Pokemon() {
+    }
+   
     public String getNombre() {
         return nombre;
     }
