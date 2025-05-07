@@ -154,6 +154,7 @@ public class Inicio extends javax.swing.JFrame {
           ventana.setLocationRelativeTo(null);
           
           //comentario 
+          //Comentario 222222
       }
       
   dispose();
