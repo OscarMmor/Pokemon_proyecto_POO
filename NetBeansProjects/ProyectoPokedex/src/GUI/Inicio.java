@@ -152,6 +152,8 @@ public class Inicio extends javax.swing.JFrame {
           PokedexPrincipal ventana = new PokedexPrincipal();
           ventana.setVisible(true);
           ventana.setLocationRelativeTo(null);
+          
+          //comentario 
       }
       
   dispose();
