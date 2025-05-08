@@ -2,23 +2,20 @@
 package Datos;
 
 public class Pokemon {
-  String nombre;
-  String tipo;
-  int numPokedex;
-  double peso;
-  String habilidad;
+    String nombre;
+    String tipo;
+    double peso;
+    String habilidad;
 
     public Pokemon(String nombre, String tipo, int numPokedex, double peso, String habilidad) {
         this.nombre = nombre;
         this.tipo = tipo;
-        this.numPokedex = numPokedex;
         this.peso = peso;
         this.habilidad = habilidad;
     }
 
-    public Pokemon() {
-    }
-   
+    public Pokemon() {}
+
     public String getNombre() {
         return nombre;
     }
@@ -33,14 +30,6 @@ public class Pokemon {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public int getNumPokedex() {
-        return numPokedex;
-    }
-
-    public void setNumPokedex(int numPokedex) {
-        this.numPokedex = numPokedex;
     }
 
     public double getPeso() {
@@ -58,8 +47,8 @@ public class Pokemon {
     public void setHabilidad(String habilidad) {
         this.habilidad = habilidad;
     }
-  
-  
+}
+
   
     
-}
+
