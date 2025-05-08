@@ -1,6 +1,7 @@
 
 package GUI;
 
+
 import Datos.Pokemon;
 import Metodos.Metodos;
 import java.util.Vector;
@@ -9,20 +10,20 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class Registrar_1 extends javax.swing.JFrame {
-
-    Pokemon pokemon = new Pokemon();
-    Metodos metodos = new Metodos();
-    DefaultTableModel mdlTabla;
-  Vector vCabeceras = new Vector();
     
+     Metodos metodos = new Metodos();
+    DefaultTableModel mdlTabla;
+    Vector vCabeceras = new Vector();
+
     public Registrar_1() {
         initComponents();
-        
+      
         vCabeceras.addElement("Nombre");
         vCabeceras.addElement("Tipo");
         vCabeceras.addElement("Habilidad");
         vCabeceras.addElement("Peso");
-        mdlTabla = new DefaultTableModel (vCabeceras,0);
+
+        mdlTabla = new DefaultTableModel(vCabeceras, 0);
         TablaRegistros.setModel(mdlTabla);
     }
 
@@ -137,7 +138,7 @@ public class Registrar_1 extends javax.swing.JFrame {
                                         .addComponent(Habilidad, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(Peso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
+                        .addGap(186, 186, 186)
                         .addComponent(Registrar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,28 +205,36 @@ public class Registrar_1 extends javax.swing.JFrame {
 
     private void RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarActionPerformed
         // TODO add your handling code here:
-       String nombre = Nombre.getText();
-       String tipo = Tipo.getText();
-       String habilidad = Habilidad.getText();
-       double peso = Double.parseDouble(Peso.getText());
-       
-       pokemon.setNombre(nombre);
-       pokemon.setTipo(tipo);
-       pokemon.setHabilidad(habilidad);
-       pokemon.setPeso(peso);
-       
-       metodos.guardar(pokemon);
-       metodos.guardarArchivo(pokemon);
-       
-       JOptionPane.showMessageDialog(null, "¡Registro exitoso!");
-      
-       Nombre.setText("");
-       Tipo.setText("");
-       Habilidad.setText("");
-       Peso.setText("");
-       
-       
-       TablaRegistros.setModel(metodos.listaPokemones());
+      String nombre = Nombre.getText();
+        String tipo = Tipo.getText();
+        String habilidad = Habilidad.getText();
+
+        double peso;
+
+        try {
+            peso = Double.parseDouble(Peso.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Peso inválido.");
+            return;
+        }
+
+        Pokemon nuevoPokemon = new Pokemon();
+        nuevoPokemon.setNombre(nombre);
+        nuevoPokemon.setTipo(tipo);
+        nuevoPokemon.setHabilidad(habilidad);
+        nuevoPokemon.setPeso(peso);
+
+        metodos.guardar(nuevoPokemon);
+        metodos.guardarArchivo(nuevoPokemon);
+
+        JOptionPane.showMessageDialog(null, "¡Registro exitoso!");
+
+        Nombre.setText("");
+        Tipo.setText("");
+        Habilidad.setText("");
+        Peso.setText("");
+
+        TablaRegistros.setModel(metodos.listaPokemones());
     }//GEN-LAST:event_RegistrarActionPerformed
 
     private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
